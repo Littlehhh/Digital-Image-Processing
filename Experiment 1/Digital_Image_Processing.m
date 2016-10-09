@@ -22,7 +22,7 @@ function varargout = Digital_Image_Processing(varargin)
 
 % Edit the above text to modify the response to help Digital_Image_Processing
 
-% Last Modified by GUIDE v2.5 09-Oct-2016 19:53:28
+% Last Modified by GUIDE v2.5 09-Oct-2016 20:00:30
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
