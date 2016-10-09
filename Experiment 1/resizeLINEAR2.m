@@ -4,7 +4,7 @@ function Output = resizeLINEAR2(H,W,Input)
 %H = 3;
 %W = 3;
 %Input = InputPicture();
-imshow(Input);
+%imshow(Input);
 [row,col] = size(Input);
 rerow = round(row*H);
 recol = round(col*W);
@@ -13,12 +13,12 @@ Output = zeros(rerow,recol);
 
 
 for i=1:rerow;
+    u = i/H-floor(i/H);
+    indexX = round((i+0.5)/H-0.5);
     for j=1:recol;
-        u = i/H-floor(i/H);
         v = j/W-floor(j/W);
-        %边界处理
-        indexX = round((i+0.5)/H-0.5);
         indexY = round((j+0.5)/W-0.5);
+        %边界处理
         if indexX <1
            indexX=1;
         end
