@@ -4,6 +4,7 @@ if FilterIndex == 0
     Input=0;
 else
     Input=imread(strcat(PathName,FileName));%打开得到的路径下的文件
+    figure
     imshow(Input);
 end
 
