@@ -1,7 +1,6 @@
 function Output = resizeNEAREST(H,W,Input)
-
-%行缩放rerow 列缩放 recol 行倍数H 列倍数W
-%双线性内插
+%最邻近插值
+%行缩放后行数rerow 列缩放后列数recol 行倍数H 列倍数W
 %H = 3;
 %W = 3;
 %Input = InputPicture();
