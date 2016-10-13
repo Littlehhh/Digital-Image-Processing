@@ -1,3 +1,4 @@
+function myHisteq()
 clc
 close all
 clear all
