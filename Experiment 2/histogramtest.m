@@ -5,7 +5,18 @@ figure
 imshow(Input)
 figure
 imhist(Input)
+
+
+eq = histeq(Input);
 figure
-eq=histeq(Input,256)
+%imhist(eq)
+imshow(eq)
 figure
 imhist(eq)
+
+ad = imadjust(Input,[0 1],[0 1],0.5);
+figure
+%imhist(eq)
+imshow(ad)
+figure
+imhist(ad)
