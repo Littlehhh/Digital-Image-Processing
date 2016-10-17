@@ -20,3 +20,5 @@ figure
 imshow(ad)
 figure
 imhist(ad)
+
+
