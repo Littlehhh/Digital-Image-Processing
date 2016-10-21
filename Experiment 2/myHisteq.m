@@ -3,15 +3,18 @@ function Output = myHisteq(Input,fun,Y)
 %fun = 2  直方图匹配
 %默认调用为直方图均衡
 %Y为输入的匹配直方图
+
+%example    Output = myHisteq(Input）为直方图匹配功能
+%           Output = myHisteq(Input,fun,Y) 为直方图均衡功能  fun理论上可以为任意值最好fun = 2； Y为目标直方图
 if nargin < 2 
    fun = 1; 
 end
 if nargin > 2 
    fun = 2;
 end
-% Input = InputPicture();
-% figure
-% imhist(Input);
+Input = InputPicture();
+figure
+imhist(Input);
 [lenth,width] = size(Input);
 Output = zeros(lenth,width);
 %计算各灰度级概率密度
@@ -38,35 +41,35 @@ if fun == 2
     X = zeros(1,256);
     for i=1:256
        [x,n] = min(abs(CDF(i) - CDFRef));
-       X(i) = n-1;
+       X(i) = n-1;  %形成变换映射
     end
     for i=1:lenth
         for j=1:width
-            Output(i,j) = X(Input(i,j)+1);
+            Output(i,j) = X(Input(i,j)+1)-1;%逐一灰度变换
         end
     end
 end
 if fun == 1
     %直方图均衡
-    Eq = round(CDF*255);
+    Eq = round(CDF*255);%形成变换映射
     for i=1:lenth
         for j=1:width
-            Output(i,j) = Eq(Input(i,j)+1);
+            Output(i,j) = Eq(Input(i,j)+1)-1;%逐一灰度变换
         end
     end
 end
 Output = uint8(Output);
-% figure
-% imhist(Output)
-% figure
-% imshow(Output)
+figure
+imhist(Output);
+figure
+imshow(Output)
 
 % Iout=histeq(Input,Y); % matlab自带直方图匹配
-% 
-% figure
-% imhist(Iout)
-% figure
-% imshow(Iout)
+Iout = histeq(Input);
+figure
+imhist(Iout);
+figure
+imshow(Iout)
 
 
 

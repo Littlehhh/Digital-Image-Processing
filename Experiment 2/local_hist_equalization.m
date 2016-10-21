@@ -4,7 +4,7 @@ function Output = local_hist_equalization(Input)
 % clc
 % close all
 % clear all
-% Input = InputPicture();
+%Input = InputPicture();
 % figure
 % imhist(Input);
 
@@ -18,7 +18,7 @@ B = zeros(3,3);
 for i = 2:length-1;
     for j = 2:width-1;
        
-       B = myHisteq(Input(i-1:i+1,j-1:j+1)); 
+       B = myHisteq(Input(i-1:i+1,j-1:j+1));   %对3*3领域内直方图均衡得到转换函数作用于原图中心点
        Output(i,j) =  B(2,2);
         
     end
