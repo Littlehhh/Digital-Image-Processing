@@ -12,10 +12,11 @@ Output = zeros(lenth,width);
 CDF = caculateCDF(Input);
 
 %直方图匹配
+
 %双高斯函数生成
 Y = zeros(1,256);
-Y1 = myGaussFun(0:127,60,40);
-Y2 = myGaussFun(0:127,85,25);
+Y1 = myGaussFun(0:127,15,50);
+Y2 = myGaussFun(0:127,80,15);
 Y(:,1:128) = Y1;
 Y(:,129:256) = 0.1*Y2;
 Y = Y/sum(Y); %归一化
@@ -53,12 +54,12 @@ imhist(Output)
 figure
 imshow(Output)
 
-Iout=histeq(Input,Y);
-
-figure
-imhist(Iout)
-figure
-imshow(Iout)
+% Iout=histeq(Input,Y); % matlab自带直方图匹配
+% 
+% figure
+% imhist(Iout)
+% figure
+% imshow(Iout)
 
 
 

@@ -1,6 +1,7 @@
 clc
 close all;
-Input = imread('moon.tif');
+Input = InputPicture();
+%Input = imread('moon.tif');
 figure
 imshow(Input)
 figure
