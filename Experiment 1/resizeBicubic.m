@@ -1,5 +1,6 @@
 function Output = resizeBicubic(H,W,Input)
 %双三次插值 
+%行缩放后行数rerow 列缩放后列数recol 行倍数H 列倍数W
 Input=double(Input);
 
 row = size(Input,1);
