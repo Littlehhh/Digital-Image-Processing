@@ -4,9 +4,9 @@ function Output = local_hist_equalization(Input)
 % clc
 % close all
 % clear all
-%Input = InputPicture();
-% figure
-% imhist(Input);
+ Input = InputPicture();
+ figure
+ imhist(Input);
 
 [length,width] = size(Input);
 Output = zeros(length,width);
@@ -24,4 +24,8 @@ for i = 2:length-1;
     end
 end
 Output = uint8(Output);
+figure
+imhist(Output);
+figure
+imshow(Output)
 

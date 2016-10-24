@@ -1,3 +1,10 @@
+% 1.数字图像的基本读写、显示与保存；五类图形显示方法
+% 2.读取图像并显示灰度图像、索引图像、RGB图像、二进制图像、多帧图像；进行图像类型转化
+% 3.编程实现最近邻法、双线性内插法、双三次内插法的图像放大
+
+% By姜仁凤14020013013  孙孟14020013027  王辉14020013029   14光科
+% 2016.10.07
+
 function varargout = Digital_Image_Processing(varargin)
 % DIGITAL_IMAGE_PROCESSING MATLAB code for Digital_Image_Processing.fig
 %      DIGITAL_IMAGE_PROCESSING, by itself, creates a new DIGITAL_IMAGE_PROCESSING or raises the existing
@@ -22,7 +29,7 @@ function varargout = Digital_Image_Processing(varargin)
 
 % Edit the above text to modify the response to help Digital_Image_Processing
 
-% Last Modified by GUIDE v2.5 09-Oct-2016 20:00:30
+% Last Modified by GUIDE v2.5 09-Oct-2016 23:29:07
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -80,9 +87,6 @@ function select_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 handles.Input = InputPicture();
-%I = imresize(handles.Input,2,'nearest');
-%figure;imshow(I);
-%figure;imshow(handles.Input);
 guidata(hObject,handles); %更新 handles ！！勿忘记
 
 
@@ -91,8 +95,7 @@ function save_Callback(hObject, eventdata, handles)
 % hObject    handle to save (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-    OutputPicture(handles.Output);
-
+OutputPicture(handles.Output);
 guidata(hObject,handles); %更新 handles ！！勿忘记
 
 
@@ -174,3 +177,47 @@ W=str2double(get(handles.width,'String'));
 handles.Output = resizeBicubic(H,W,handles.Input);
 title('双三次插值法放缩所得图像')
 guidata(hObject,handles);
+
+
+% --- Executes on button press in pushbutton10.
+function pushbutton10_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton10 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% 将RGB图像转化为索引图像
+Input = handles.Input;
+[B1,map1]=rgb2ind(Input,64);
+[B2,map2]=rgb2ind(Input,0.2);
+map3=colorcube(128);
+B3=rgb2ind(Input,map3);
+B1 = uint8(B1);B2 = uint8(B2);B3 = uint8(B3);
+figure,
+subplot(131),imshow(B1,map1);title('最小方差法');%最小方差法
+subplot(132),imshow(B2,map2);title('均匀量化法');%均匀量化法
+subplot(133),imshow(B3,map3);title('颜色近似法');%颜色近似法
+
+
+% --- Executes on button press in pushbutton11.
+function pushbutton11_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton11 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+Input = handles.Input;
+A=rgb2gray(Input);
+figure;
+imshow(A);%转成灰度图
+
+
+% --- Executes on button press in pushbutton12.
+function pushbutton12_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton12 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+Input = handles.Input;
+% 转成二值图
+A=rgb2gray(Input);
+M1=dither(A);%图像抖动
+M2=im2bw(Input,0.5);%设定阈值
+figure,
+subplot(121),imshow(M1);title('dither图像抖动');
+subplot(122),imshow(M2);title('im2bw设定阈值');
