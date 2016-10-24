@@ -19,6 +19,7 @@ for i = 2:length-1;
     for j = 2:width-1;
        
        B = myHisteq(Input(i-1:i+1,j-1:j+1));   %对3*3领域内直方图均衡得到转换函数作用于原图中心点
+       %B = histeq(Input(i-1:i+1,j-1:j+1));
        Output(i,j) =  B(2,2);
         
     end
@@ -27,5 +28,5 @@ Output = uint8(Output);
 figure
 imhist(Output);
 figure
-imshow(Output)
+imshow(Output);
 
