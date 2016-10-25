@@ -13,4 +13,5 @@ end
 CERF= P.*log(P./F);
 CERF(isnan(CERF))=0;%ÌÞ³ýÎÞÐ§Öµ£¨nan£©
 R=sum(CERF);
+
   
