@@ -67,8 +67,9 @@ figure
 imhist(Output);
 figure
 imshow(Output)
-
-% Iout=histeq(Input,Y); % matlab自带直方图匹配
+tic
+ Iout=histeq(Input); % matlab自带直方图匹配
+ toc
 % % Iout = histeq(Input);
 % figure
 % imhist(Iout);

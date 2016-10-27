@@ -12,7 +12,7 @@ n = 3;
 [length,width] = size(Input);
 Output = zeros(length,width);
 
-
+% parpool('local',4); 
 
 
 %% 
@@ -23,12 +23,18 @@ out = imfilter(Input,mask,'conv','replicate');
 figure
 out = uint8(out);
 imshow(out)
+
+tic
+
+  
+        %parallel program  
 for i = 2:length-1;
     for j = 2:width-1;
         %OutputTemp = conv2(Input(i,j),mask);%Çó¾í»ý
         Output(i,j) = sum(sum(Input((i-1:i+1),(j-1:j+1)).* mask));
     end
 end
+toc
 Output = uint8(Output);
 figure
 imshow(Output)
@@ -52,3 +58,4 @@ end
 figure
 Output = uint8(Output);
 imshow(Output)
+delete(gcp('nocreate'));
