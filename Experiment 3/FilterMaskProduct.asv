@@ -15,27 +15,23 @@ Output = zeros(length,width);
 % parpool('local',4); 
 switch type
   case 'average' % Smoothing filter
-     mask   = ones(siz)/prod(siz);
-     Output = conv2(Input,mask,'same');
+     siz = p2;
+     h   = ones(siz)/prod(siz);
   case 'gaussian' % Gaussian filter
 
-     siz   = [3 3];
-     std   = 1;
+     siz   = (p2-1)/2;
+     std   = p3;
      
      [x,y] = meshgrid(-siz(2):siz(2),-siz(1):siz(1));
      arg   = -(x.*x + y.*y)/(2*std*std);
 
-     mask  = exp(arg);
-     mask  = mask/sum(sum(mask));
-     Output = conv2(Input,mask,'same');
-   case 'laplacian' % Laplacian filter
-     alpha = p2;
-     alpha = max(0,min(alpha,1));
-     h1    = alpha/(alpha+1); h2 = (1-alpha)/(alpha+1);
-     h     = [h1 h2 h1;h2 -4/(alpha+1) h2;h1 h2 h1];
-   case 'sobel' % Sobel filter
-     mask = [1 2 1;0 0 0;-1 -2 -1];
-end
+     h     = exp(arg);
+     h(h<eps*max(h(:))) = 0;
+
+     sumh = sum(h(:));
+     if sumh ~= 0,
+       h  = h/sumh;
+     end;
 %% 
 %%均值滤波
 mask = ones(m,n)/(m*n);
@@ -48,14 +44,13 @@ imshow(out)
 tic
 
   
-Output = conv2(Input,mask,'same');
-        
-% for i = 2:length-1;
-%     for j = 2:width-1;
-%         %OutputTemp = conv2(Input(i,j),mask);%求卷积
-%         Output(i,j) = sum(sum(Input((i-1:i+1),(j-1:j+1)).* mask));
-%     end
-% end
+        %parallel program  
+for i = 2:length-1;
+    for j = 2:width-1;
+        %OutputTemp = conv2(Input(i,j),mask);%求卷积
+        Output(i,j) = sum(sum(Input((i-1:i+1),(j-1:j+1)).* mask));
+    end
+end
 toc
 Output = uint8(Output);
 figure
