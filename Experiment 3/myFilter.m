@@ -1,8 +1,11 @@
 function Output = myFilter(Input,SizeOfMask,type)
-%集成空间滤波函数
-%%关于此函数的说明
-%调用格式
+%   集成空间滤波函数
+%   现有功能：均值滤波 高斯滤波 拉普拉斯滤波 sobel滤波 中值滤波
+%   后续可以继续扩展
 
+
+%%  关于此函数的说明
+%   调用格式
 
 % 均值滤波  Output = myFilter(Input,SizeOfMask,'average'); SizeOfMask 为任意合理奇数
 
@@ -11,10 +14,12 @@ function Output = myFilter(Input,SizeOfMask,type)
 % 拉普拉斯滤波 Output = myFilter(Input,SizeOfMask,'laplacian'); SizeOfMask = 1时
 %               mask = [0 1 0;1 -4 1;0 1 0];其余 mask = [0 1 0;1 -8 1;0 1 0];
 
-% sobel滤波  Output = myFilter(Input,SizeOfMask,'sobel');SizeOfMask已经内置，任意数即可
+% sobel滤波  Output = myFilter(Input,SizeOfMask,'sobel');SizeOfMask 已经内置，任意数即可
 
 % 中值滤波  Output = myFilter(Input,SizeOfMask,'median');SizeOfMask 为任意合理奇数
 
+%Attention
+%该函数只能处理二维数据，rgb需要先将图片转为gray或者将他们的三个分量分离出来
 
 Input = double(Input);
 % SizeOfMask = 3;  %模板大小
@@ -47,7 +52,6 @@ switch type
      Gx = conv2(Input,mask','same');
      Gy = conv2(Input,mask,'same');
      Output = abs(Gx)+abs(Gy);
-     
    case 'median' %median filter
      Output = myMedfilt(Input,SizeOfMask);  
 end
