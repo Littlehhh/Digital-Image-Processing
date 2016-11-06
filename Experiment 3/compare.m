@@ -10,7 +10,7 @@ if size(Input,3)==3
     Input1 = rgb2gray(Input1);
 end
 %Input = double(Input);
-SizeOfMask = 7;
+SizeOfMask = 3;
 Output = myFilter(Input1,SizeOfMask,'average');
 Output2 = myFilter(Input1,SizeOfMask,'gaussian');
 Output3 = myFilter(Input1,SizeOfMask,'median');
