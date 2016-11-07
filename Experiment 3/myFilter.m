@@ -3,7 +3,6 @@ function Output = myFilter(Input,SizeOfMask,type)
 %   现有功能：均值滤波 高斯滤波 拉普拉斯滤波 sobel滤波 中值滤波
 %   后续可以继续扩展
 
-
 %%  关于此函数的说明
 %   调用格式
 
@@ -25,7 +24,7 @@ Input = double(Input);
 % SizeOfMask = 3;  %模板大小
 % Output = zeros(length,width);
 Output = Input;
-% parpool('local',4); 
+
 switch type
   case 'average' % Smoothing filter
      mask   = ones(SizeOfMask)/(SizeOfMask*SizeOfMask);
@@ -56,30 +55,6 @@ switch type
      Output = myMedfilt(Input,SizeOfMask);  
 end
 Output = uint8(Output);
-%% 
-%%均值滤波
-% mask = ones(m,n)/(m*n);
-% %mask = 1/16 * [1 2 1;2 4 2;1 2 1];
-% out = imfilter(Input,mask,'conv','replicate');
-% figure
-% out = uint8(out);
-% imshow(out)
-% 
-% tic
-% fspecial
-%   
-% Output = conv2(Input,mask,'same');
-        
-% for i = 2:length-1;
-%     for j = 2:width-1;
-%         %OutputTemp = conv2(Input(i,j),mask);%求卷积
-%         Output(i,j) = sum(sum(Input((i-1:i+1),(j-1:j+1)).* mask));
-%     end
-% end
-% toc
-% Output = uint8(Output);
-% figure
-% imshow(Output)
 end
 %% 
 %%中值滤波
@@ -87,12 +62,7 @@ end
 function Output = myMedfilt(Input,SizeOfMask)
     n = (SizeOfMask-1)/2;
     Output = Input;
-%     out = medfilt2(Input,[3 3]);
-%     figure
-%     out = uint8(out);
-%     imshow(out)
     [length,width] = size(Input);
-%     Output = zeros(length,width);
     for i = 1+n:length-n;
         for j = 1+n:width-n;
             mask = Input((i-n:i+n),(j-n:j+n));
@@ -101,7 +71,3 @@ function Output = myMedfilt(Input,SizeOfMask)
         end
     end
 end
-% figure
-% Output = uint8(Output);
-% imshow(Output)
-%delete(gcp('nocreate'));
