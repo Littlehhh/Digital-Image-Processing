@@ -18,5 +18,5 @@ vy = v'*y;
 WNnk = WN .^vy;
 
 XY = (WMnk * xy * WNnk)/(M*N);
-XY(XY<1e-10) = 0;
+% XY(XY<1e-10) = 0;
 % result = ifft2(xy);
