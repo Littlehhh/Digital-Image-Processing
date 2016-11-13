@@ -9,6 +9,6 @@ nk = n'*k;
 WNnk = WN .^nk;
 
 Xk = xn * WNnk;
-%  xk = fft(xn);
+%   xk = fft(xn)
 
 

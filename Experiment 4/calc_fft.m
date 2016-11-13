@@ -2,7 +2,7 @@
 function F=calc_fft(x)
 N=length(x);%tamaño de la entrada
 Fant=zeros(1,N);%vector temporal 
-
+F=zeros(1,N);
 
 %% Aclaraciones
 %el tamaño del vector de entrada debe ser una potencia de dos N=2^n con n
