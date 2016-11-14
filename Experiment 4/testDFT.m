@@ -7,9 +7,8 @@ mask = ones(10,10);
 Input(40:49,40:49) = mask;
 tic
 XY = myDFTforPicture(Input);
-IXY = myIDFT2(XY,size(Input,1),size(Input,2));
-XY_abs = abs(XY);
 toc
+XY_abs = abs(XY);
 figure
 imshow(XY_abs,[])
 figure

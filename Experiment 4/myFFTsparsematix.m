@@ -1,14 +1,11 @@
-clc
-clear all
+function XK = myFFTsparsematix(X)
+n = length(X);
+if log2(n)
 
-n = 1024;
 x = 0:n-1;
-X = 1:n;
-tic
 Wn = exp(-1i*2*pi*x/n);
 %ÂëÎ»µ¹ÖÃ
 B = dec2bin(x,log2(n));
-
 C=fliplr(B);
 xBRO = bin2dec(C)+1;
 deep = 1;
@@ -40,14 +37,4 @@ XK = zeros(1,n);
 for i=1:n;
      XK(i) = XBRO(xBRO(i));
 end
-XK;
-toc
-tic
-com = fft(X);
-toc
-tic
-F=calc_fft(X);
-toc
-tic
-myFFTrecursion(X,n);
-toc
+
