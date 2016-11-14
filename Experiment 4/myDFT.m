@@ -1,7 +1,7 @@
-function Xk = myDFT(xn,N)
+function Xk = myDFT(xn)
 % N = 10;
 % xn = 1:N;
-
+N=length(xn);
 n = 0:N-1;
 k = 0:N-1;
 WN = exp(-1i*2*pi/N);

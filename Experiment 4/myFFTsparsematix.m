@@ -1,6 +1,9 @@
 function XK = myFFTsparsematix(X)
 n = length(X);
-if log2(n)
+if log2(n)~=fix(log2(n))   
+    errordlg('向量长度应为2的指数次');
+    return
+end
 
 x = 0:n-1;
 Wn = exp(-1i*2*pi*x/n);

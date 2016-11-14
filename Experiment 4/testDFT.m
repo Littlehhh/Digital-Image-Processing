@@ -11,8 +11,6 @@ toc
 XY_abs = abs(XY);
 figure
 imshow(XY_abs,[])
-figure
-imshow(abs(IXY),[])
 tic
 xy = abs(fftshift(fft2(double(Input))));
 toc

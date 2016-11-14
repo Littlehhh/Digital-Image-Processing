@@ -1,7 +1,7 @@
 clc
 clear all
 
-n = 1024;
+n = 8192;
 x = 0:n-1;
 X = 1:n;
 tic
@@ -14,8 +14,9 @@ for i=1:n;
      XK(i) = X(xBRO(i));
 end
 toc
-N=length(x);
 tic
+N=length(x);
+
 Fant=zeros(1,n);
 M=N/2;
 desp=0;

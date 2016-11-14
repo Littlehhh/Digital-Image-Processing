@@ -3,7 +3,7 @@ clear all
 
 % Input = InputPicture();
 % Input = double(Input);
-Input = zeros(2048,2048);
+Input = zeros(1024,1024);
 mask = ones(10,10);
 Input(40:49,40:49) = mask;
 
@@ -11,23 +11,14 @@ Input(40:49,40:49) = mask;
 % X = zeros(M,N);
 tic
 X=myFFT2(Input);
-X = myFFT2(X.').';
 toc
-% tic
-% for i = 1:M;
-%     X(i,:)=myFFT(Input(i,:));
-% end
-% for i = 1:N;
-%     X(:,i)=myFFT(X(:,i));
-% end
-% toc
+
 tic
 COM = fftshift(fft2(Input));
 toc
 
 tic
 XY = myDFTforPicture(Input);
-IXY = myIDFT2(XY,size(Input,1),size(Input,2));
 X_abs = abs(XY);
 toc
 % 
