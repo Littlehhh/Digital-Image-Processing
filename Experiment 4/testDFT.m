@@ -11,8 +11,10 @@ toc
 XY_abs = abs(XY);
 figure
 imshow(XY_abs,[])
+title('myDFT2 变换所得到的图像');
 tic
 xy = abs(fftshift(fft2(double(Input))));
 toc
 figure
 imshow(xy,[])
+title('fft2 变换所得到的图像');

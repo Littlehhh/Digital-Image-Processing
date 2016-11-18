@@ -1,23 +1,21 @@
-% Input = zeros(2000,2000);
-% mask = ones(10,10);
-% Input(40:49,40:49) = mask;
-Input = myGaussian2D(60,60);
-% Input = myRect2D(600,600,10000,2);
-% Out = myFraunhofer_diffraction(Input,532,10000);
-% Out = myFresnel_diffraction(Input,532,880);
+
+Input = myGaussian2D(60,60);%生成高斯光
+
 close all
 pause('on');
 figure
+%在 880到1000 范围内观察变化
 for i=880:1000;
     Out = myFresnel_diffraction(Input,532,i);
-    title(['z=',num2str(i),'mm']);
+    title(['菲涅尔衍射 z=',num2str(i),'mm']);
     pause(0.01);
 end
-% close all
-% pause('on');
-% figure
-% for i=5000:200:50000;
-%     Out = myFraunhofer_diffraction(Input,532,i);
-%     title(['z=',num2str(i),'mm']);
-%     pause(0.01);
-% end
+close all
+pause('on');
+figure
+%在 4000到50000 范围内观察变化
+for i=200:200:50000;
+    Out = myFraunhofer_diffraction(Input,532,i);
+    title(['夫琅和费衍射 z=',num2str(i),'mm']);
+    pause(0.01);
+end

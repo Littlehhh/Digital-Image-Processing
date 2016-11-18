@@ -1,6 +1,4 @@
 function Xk = myDFT(xn)
-% N = 10;
-% xn = 1:N;
 N=length(xn);
 n = 0:N-1;
 k = 0:N-1;
@@ -9,6 +7,6 @@ nk = n'*k;
 WNnk = WN .^nk;
 
 Xk = xn * WNnk;
-%   xk = fft(xn)
+
 
 

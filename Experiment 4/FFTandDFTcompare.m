@@ -1,6 +1,7 @@
+
 clc
 clear all
-n = 4096;
+n = 1024;
 xn = ones(1,n);
 
 tic
@@ -10,12 +11,12 @@ toc
 tic
 XK = myFFT(xn);
 toc
-% tic
-% XK2 = myFFTrecursion(xn,n);
-% toc
-% tic
-% XK3 = myFFTsparsematix(xn);
-% toc
+tic
+XK2 = myFFTrecursion(xn,n);
+toc
+tic
+XK3 = myFFTsparsematix(xn);
+toc
 tic
 XK1 = myDFT(xn);
 toc
