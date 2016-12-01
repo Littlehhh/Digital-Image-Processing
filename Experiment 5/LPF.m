@@ -1,15 +1,12 @@
-function Output = LPF(Input,type,D0,n)
+function Mask = LPF(length,width,type,D0,n)
 % ‰»ÎFourier±‰ªª
 % Input=double(InputPicture());
 % Input = fftshift(fft2(Input));
 % Input = abs(Input);
-% 
 % Input = log(Input);
 % %mesh(Input)
 % imshow(Input,[]);
-% type = 'ideal';
-[length,width] = size(Input);
-
+%[length,width] = size(Input);
 %mask
 Mask = zeros(length,width);
 %create the distance matrix
@@ -26,11 +23,11 @@ switch type
 case 'ideal'
    Mask(D<D0) = 1;
 case 'btw'
-    if nargin == 3
+    if nargin == 4
         n = 1;
     end
     Mask = 1./(1 + (D./D0).^(2*n));                                         
 case 'gaussian'
    Mask = exp(-(D.^2)./(2*(D0^2)));
 end
-Output = Input.*Mask;
+%Output = Input.*Mask;

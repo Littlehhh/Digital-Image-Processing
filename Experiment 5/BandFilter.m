@@ -1,6 +1,6 @@
-function Output = BandFilter(Input,type, band, D0, W, n)
+function Mask = BandFilter(length,width,type, band, D0, W, n)
 
-[length,width] = size(Input);
+%[length,width] = size(Input);
 
 %mask
 Mask = ones(length,width);
@@ -28,7 +28,7 @@ if strcmp(band, 'pass')
    Mask = 1 - Mask;
 end
 
-Output = Input.*Mask;
+%Output = Input.*Mask;
 %------------------------------------------------------------------%
 function H = idealReject(D, D0, W)
 RI = D <= D0 - (W/2);   % Points of region inside the inner 
