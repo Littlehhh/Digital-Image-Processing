@@ -1,6 +1,8 @@
 function varargout = RGB_to_HSI(rgb)
 %Converts an RGB image to HSI.
 %The format of the function
+% 1.HSI = RGB_to_HSI(rgb);
+% 2.[h,s,i] = RGB_to_HSI(rgb);
 
 % Extract the individual component images.
 rgb = im2double(rgb);

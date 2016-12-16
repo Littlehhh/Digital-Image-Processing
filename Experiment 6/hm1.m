@@ -1,7 +1,7 @@
 %µÚÈıÌâ
 
-% rgb = InputPicture();
-rgb = imread('Fig0637(a)(caster_stand_original).tif');
+rgb = InputPicture();
+% rgb = imread('Fig0637(a)(caster_stand_original).tif');
 HSI = RGB_to_HSI(rgb);
 [h,s,i] = RGB_to_HSI(rgb);
 % figure
