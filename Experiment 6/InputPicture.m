@@ -8,8 +8,8 @@ if FilterIndex == 0%判断用户是否取消保存
     Input=0;
 else
     Input=imread(strcat(PathName,FileName));%打开得到的路径下的文件
-    figure
-    imshow(Input);
-    title('原始图像')
+%     figure
+%     imshow(Input);
+%     title('原始图像')
 end
 
