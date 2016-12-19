@@ -148,7 +148,7 @@ end
 % imshow(handles.RGB);
 dcm_obj = datacursormode(fig);
 set(dcm_obj,'DisplayStyle','datatip','SnapToDataVertex','on','Enable','on');
-pause 
+pause
 c_info = getCursorInfo(dcm_obj);
 X = c_info.Position(2);
 Y = c_info.Position(1);
@@ -158,8 +158,7 @@ neibor = str2double(get(handles.range,'String'));
 color = uisetcolor();
 
 for i = 1:length(X)
-    handles.RGB(X(i),Y(i),:) = color;
+    handles.RGB(X(i),Y(i),:) = color; 
 end
 imshow(handles.RGB)
-
 guidata(hObject, handles);
