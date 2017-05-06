@@ -13,7 +13,7 @@ It's some Matlab codes for Digital Image Processing.
     * 读取图像并显示灰度图像、索引图像、RGB图像、二进制图像、多帧图像；进行图像类型转化
     * 编程实现最近邻法、双线性内插法（及它的改进方法）、双三次内插法的图像放大(全部考虑到RGB图而不光是适用于灰度图)
   * Problems
-    * 双三次内插法的核函数是否有更好的形式
+    * 双三次内插法的核函数是否有更好的形式?
 * Experiment2
   * Mainly functions
     * 图像的直方图均衡
@@ -38,7 +38,7 @@ It's some Matlab codes for Digital Image Processing.
 * Experiment4
   * Mainly functions
     * 充分利用matlab快速矩阵相乘实现`离散傅里叶变换`
-    * 实现三种快速傅里叶变换（FFT）以及相应的逆变换包括一维变换及二维变换
+    * 实现三种`快速傅里叶变换`（FFT）以及相应的逆变换包括一维变换及二维变换
       1. 时域抽取基-2FFT算法（递归版）
       2. 时域抽取基-2FFT算法（迭代版）  
       [蝴蝶算法](http://baike.baidu.com/link?url=j8vckQPUi1nJQ6DOKdfzX2b6bkKY_k5OoysXmvPi3UtLZh79xUwv22Ql-jYtK3N92ZVIx4IazVqktz6y8uDmlINQBxADuyutcel6PrM0g4LovLLHCIT1tYX_-Uhv2rrE5yQhVwcboqF0YvxVmaMq9niilwuITWyqgWogEE2s4BK)  
@@ -58,12 +58,22 @@ It's some Matlab codes for Digital Image Processing.
     * 编程实现了图像的理想低通、高斯低通 、布特沃斯低通滤波及相应的高通滤波
     * 实现陷波（带阻、带通）滤波器对图像进行滤波
     * 对一幅图像进行运动模糊并加高斯噪声，然后对图像进行逆滤波、维纳滤波进行图像复原
-    * 初步接触QT框架，利用C++ & OpenCV & QTcreator实现了一个频域滤波小软件  
-    软件截图
-    ![]()
+    * 初步接触QT框架，利用C++ & OpenCV & QTcreator实现了一个频域滤波GUI小软件（可打包单独运行）  
+    [软件截图]()
   * Problems
     * 限波滤波器对图像进行滤波只能以人机交互的方式，没有普适性，是个遗憾
 * Experiment6
   * Mainly functions
+    * 实现将`RGB`图像转为`HSI`三分量的程序
+    * 实现将`HSI`图像转为`RGB`三分量的程序
+    * 实现彩色图像直方图均衡
+    * 编写用户交互的自定义伪彩色处理小软件  
+    [软件截图]()
 * Experiment7
   * Mainly functions
+    * 实现图像基本形态学处理（腐蚀、膨胀、开运算、闭运算）
+    * 实现提取给定图像不同形状的结构元素特征（使用形态学开运算和闭运算）
+    * 实现对酵母细胞以及酵母细胞核的图像分割
+      1. Otus方法
+      2. 拉普拉斯为基础的边缘信息改进  冈萨雷斯数字图像处理p485
+* FP（指纹识别）
