@@ -1,8 +1,8 @@
-% 1.Êı×ÖÍ¼ÏñµÄ»ù±¾¶ÁĞ´¡¢ÏÔÊ¾Óë±£´æ£»ÎåÀàÍ¼ĞÎÏÔÊ¾·½·¨
-% 2.¶ÁÈ¡Í¼Ïñ²¢ÏÔÊ¾»Ò¶ÈÍ¼Ïñ¡¢Ë÷ÒıÍ¼Ïñ¡¢RGBÍ¼Ïñ¡¢¶ş½øÖÆÍ¼Ïñ¡¢¶àÖ¡Í¼Ïñ£»½øĞĞÍ¼ÏñÀàĞÍ×ª»¯
-% 3.±à³ÌÊµÏÖ×î½üÁÚ·¨¡¢Ë«ÏßĞÔÄÚ²å·¨¡¢Ë«Èı´ÎÄÚ²å·¨µÄÍ¼Ïñ·Å´ó
+% 1.æ•°å­—å›¾åƒçš„åŸºæœ¬è¯»å†™ã€æ˜¾ç¤ºä¸ä¿å­˜ï¼›äº”ç±»å›¾å½¢æ˜¾ç¤ºæ–¹æ³•
+% 2.è¯»å–å›¾åƒå¹¶æ˜¾ç¤ºç°åº¦å›¾åƒã€ç´¢å¼•å›¾åƒã€RGBå›¾åƒã€äºŒè¿›åˆ¶å›¾åƒã€å¤šå¸§å›¾åƒï¼›è¿›è¡Œå›¾åƒç±»å‹è½¬åŒ–
+% 3.ç¼–ç¨‹å®ç°æœ€è¿‘é‚»æ³•ã€åŒçº¿æ€§å†…æ’æ³•ã€åŒä¸‰æ¬¡å†…æ’æ³•çš„å›¾åƒæ”¾å¤§
 
-% By½ªÈÊ·ï14020013013  ËïÃÏ14020013027  Íõ»Ô1imaqhwinfo4020013029   14¹â¿Æ
+
 % 2016.10.07
 
 function varargout = Digital_Image_Processing(varargin)
@@ -87,7 +87,7 @@ function select_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 handles.Input = InputPicture();
-guidata(hObject,handles); %¸üĞÂ handles £¡£¡ÎğÍü¼Ç
+guidata(hObject,handles); %æ›´æ–° handles ï¼ï¼å‹¿å¿˜è®°
 
 
 % --- Executes on button press in save.
@@ -96,7 +96,7 @@ function save_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 OutputPicture(handles.Output);
-guidata(hObject,handles); %¸üĞÂ handles £¡£¡ÎğÍü¼Ç
+guidata(hObject,handles); %æ›´æ–° handles ï¼ï¼å‹¿å¿˜è®°
 
 
 % --- Executes on button press in nearest.
@@ -107,7 +107,7 @@ function nearest_Callback(hObject, eventdata, handles)
 H=str2double(get(handles.length,'String'));
 W=str2double(get(handles.width,'String'));
 handles.Output = resizeNEAREST(H,W,handles.Input);
-title('×î½üÁÚ²åÖµ·¨·ÅËõËùµÃÍ¼Ïñ')
+title('æœ€è¿‘é‚»æ’å€¼æ³•æ”¾ç¼©æ‰€å¾—å›¾åƒ')
 guidata(hObject,handles);
 
 % --- Executes on button press in linear.
@@ -118,7 +118,7 @@ function linear_Callback(hObject, eventdata, handles)
 H=str2double(get(handles.length,'String'));
 W=str2double(get(handles.width,'String'));
 handles.Output = resizeLINEAR(H,W,handles.Input);
-title('Ë«ÏßĞÔÄÚ²å·¨·ÅËõËùµÃÍ¼Ïñ')
+title('åŒçº¿æ€§å†…æ’æ³•æ”¾ç¼©æ‰€å¾—å›¾åƒ')
 guidata(hObject,handles);
 
 
@@ -175,7 +175,7 @@ function bicubic_Callback(hObject, eventdata, handles)
 H=str2double(get(handles.length,'String'));
 W=str2double(get(handles.width,'String'));
 handles.Output = resizeBicubic(H,W,handles.Input);
-title('Ë«Èı´Î²åÖµ·¨·ÅËõËùµÃÍ¼Ïñ')
+title('åŒä¸‰æ¬¡æ’å€¼æ³•æ”¾ç¼©æ‰€å¾—å›¾åƒ')
 guidata(hObject,handles);
 
 
@@ -184,7 +184,7 @@ function pushbutton10_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% ½«RGBÍ¼Ïñ×ª»¯ÎªË÷ÒıÍ¼Ïñ
+% å°†RGBå›¾åƒè½¬åŒ–ä¸ºç´¢å¼•å›¾åƒ
 Input = handles.Input;
 [B1,map1]=rgb2ind(Input,64);
 [B2,map2]=rgb2ind(Input,0.2);
@@ -192,9 +192,9 @@ map3=colorcube(128);
 B3=rgb2ind(Input,map3);
 B1 = uint8(B1);B2 = uint8(B2);B3 = uint8(B3);
 figure,
-subplot(131),imshow(B1,map1);title('×îĞ¡·½²î·¨');%×îĞ¡·½²î·¨
-subplot(132),imshow(B2,map2);title('¾ùÔÈÁ¿»¯·¨');%¾ùÔÈÁ¿»¯·¨
-subplot(133),imshow(B3,map3);title('ÑÕÉ«½üËÆ·¨');%ÑÕÉ«½üËÆ·¨
+subplot(131),imshow(B1,map1);title('æœ€å°æ–¹å·®æ³•');%æœ€å°æ–¹å·®æ³•
+subplot(132),imshow(B2,map2);title('å‡åŒ€é‡åŒ–æ³•');%å‡åŒ€é‡åŒ–æ³•
+subplot(133),imshow(B3,map3);title('é¢œè‰²è¿‘ä¼¼æ³•');%é¢œè‰²è¿‘ä¼¼æ³•
 
 
 % --- Executes on button press in pushbutton11.
@@ -205,7 +205,7 @@ function pushbutton11_Callback(hObject, eventdata, handles)
 Input = handles.Input;
 A=rgb2gray(Input);
 figure;
-imshow(A);%×ª³É»Ò¶ÈÍ¼
+imshow(A);%è½¬æˆç°åº¦å›¾
 
 
 % --- Executes on button press in pushbutton12.
@@ -214,10 +214,10 @@ function pushbutton12_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 Input = handles.Input;
-% ×ª³É¶şÖµÍ¼
+% è½¬æˆäºŒå€¼å›¾
 A=rgb2gray(Input);
-M1=dither(A);%Í¼Ïñ¶¶¶¯
-M2=im2bw(Input,0.5);%Éè¶¨ãĞÖµ
+M1=dither(A);%å›¾åƒæŠ–åŠ¨
+M2=im2bw(Input,0.5);%è®¾å®šé˜ˆå€¼
 figure,
-subplot(121),imshow(M1);title('ditherÍ¼Ïñ¶¶¶¯');
-subplot(122),imshow(M2);title('im2bwÉè¶¨ãĞÖµ');
+subplot(121),imshow(M1);title('ditherå›¾åƒæŠ–åŠ¨');
+subplot(122),imshow(M2);title('im2bwè®¾å®šé˜ˆå€¼');
