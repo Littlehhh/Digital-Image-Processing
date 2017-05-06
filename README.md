@@ -26,8 +26,9 @@ It's some Matlab codes for Digital Image Processing.
     * 对图像添加椒盐噪声以及高斯噪声
     * 实现对图像的均值滤波、高斯滤波、中值滤波
     * 实现laplacian算子对图像的增强、Sobel算子对图像边缘提取
-    * 使用均方误差和交叉熵对图像去噪效果进行了量化评价（客观评价）
+    * 使用均方误差和交叉熵对图像去噪效果进行了量化评价（客观评价）  
     ![公式](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%203/%E5%85%AC%E5%BC%8F.bmp)
+    * 初步接触OpenCV库
   * Problems
 
 * Experiment4
