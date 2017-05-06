@@ -10,7 +10,7 @@ rerow = round(row*H);
 recol = round(col*W);
 Output = zeros(rerow,recol,3);
 
- for i=1:rerow;
+for i=1:rerow;
     for j=1:recol; 
         indexX = round(i/H);
         indexY = round(j/W);
@@ -29,7 +29,7 @@ Output = zeros(rerow,recol,3);
         end
             Output(i,j,:) = Input(indexX,indexY,:);      
     end
- end
+end
 
 Output = uint8(Output);
 figure

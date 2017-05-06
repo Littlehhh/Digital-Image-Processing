@@ -7,6 +7,8 @@ function Mask = LPF(length,width,type,D0,n)
 % %mesh(Input)
 % imshow(Input,[]);
 %[length,width] = size(Input);
+
+
 %mask
 Mask = zeros(length,width);
 %create the distance matrix
@@ -19,6 +21,7 @@ v(idy) = v(idy) - width;
 [V, U] = meshgrid(v, u);
 D = sqrt(V.^2 + U.^2);
 D = fftshift(D);
+
 switch type
 case 'ideal'
    Mask(D<D0) = 1;

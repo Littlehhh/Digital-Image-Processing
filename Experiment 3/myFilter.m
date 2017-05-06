@@ -65,9 +65,10 @@ function Output = myMedfilt(Input,SizeOfMask)
     [length,width] = size(Input);
     for i = 1+n:length-n;
         for j = 1+n:width-n;
-            mask = Input((i-n:i+n),(j-n:j+n));
-            maskTemp(1,:) = mask(:);%median返回值的原因需要将mask转为一行
-            Output(i,j) = median(maskTemp);%求中值
+           mask = Input((i-n:i+n),(j-n:j+n));
+           % maskTemp(1,:) = mask(:);%median返回值的原因需要将mask转为一行
+           % Output(i,j) = median(maskTemp);%求中值
+		   Output = median(median(mask));
         end
     end
 end
