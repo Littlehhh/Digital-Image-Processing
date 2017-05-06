@@ -42,18 +42,27 @@ It's some Matlab codes for Digital Image Processing.
       1. 时域抽取基-2FFT算法（递归版）
       2. 时域抽取基-2FFT算法（迭代版）  
       [蝴蝶算法](http://baike.baidu.com/link?url=j8vckQPUi1nJQ6DOKdfzX2b6bkKY_k5OoysXmvPi3UtLZh79xUwv22Ql-jYtK3N92ZVIx4IazVqktz6y8uDmlINQBxADuyutcel6PrM0g4LovLLHCIT1tYX_-Uhv2rrE5yQhVwcboqF0YvxVmaMq9niilwuITWyqgWogEE2s4BK)  
-      ![蝴蝶算法](https://github.com/Littlehhh/Digital-Image-Processing/tree/master/Experiment%204/%E5%85%AC%E5%BC%8F.bmp)
+      ![蝴蝶算法](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%204/%E5%85%AC%E5%BC%8F.bmp)
       3. 基于稀疏矩阵分解的FFT  
       [参考书：快速傅里叶变换：算法与应用](http://baike.baidu.com/link?url=eOVkAB4fxqUbWyOtwALgyRGu1dxbt5YvCST0RTyzN616fo_64R2GKRHo05Ng9wcMF_JuEemPqGDT2v6HgbNal9Ee-7vgPeL2E-QePH5ujk5RaWLoFxnQR7MbBBzPhbiy1EvxcLtu2vFPPsD_dT_DPL7yxrR08Ns8Rnno-rRY7jPOTWwME5_iIq0o40WoBg9ROhx5qxXVhYG0KjkGIxHIeLHdOMQJlyRa6_CZJ5m-8YS)
       4. 对算法进行了运行时间测试并与Matlab自带fft进行了比较
     * 利用`FFT2()`实现二维高斯光束的菲涅尔衍射和夫琅禾费衍射
     * 使用C++ & OpenCV实现了基本的快速傅里叶变换类`class myDFT()`
   * Problems
-  * Extra
-    ![fftw-logo](http://www.fftw.org/fftw-logo-med.gif)
+    * Matlab申请内存空间的函数实在是太慢了，严重拖慢FFT的运行速度，而它的矩阵运算是真的快，这种时候C/C++的优势就体现出来了
+  * Extra  
+  ![fftw-logo](http://www.fftw.org/fftw-logo-med.gif)
     * [一个著名的开源FFT库:fftw](http://www.fftw.org/) （Matlab的fft的底层库）
 * Experiment5
   * Mainly functions
+    * 编程实现了图像的理想低通、高斯低通 、布特沃斯低通滤波及相应的高通滤波
+    * 实现陷波（带阻、带通）滤波器对图像进行滤波
+    * 对一幅图像进行运动模糊并加高斯噪声，然后对图像进行逆滤波、维纳滤波进行图像复原
+    * 初步接触QT框架，利用C++ & OpenCV & QTcreator实现了一个频域滤波小软件  
+    软件截图
+    ![]()
+  * Problems
+    * 限波滤波器对图像进行滤波只能以人机交互的方式，没有普适性，是个遗憾
 * Experiment6
   * Mainly functions
 * Experiment7
