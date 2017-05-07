@@ -59,7 +59,7 @@ It's some Matlab codes for Digital Image Processing.
     * 实现陷波（带阻、带通）滤波器对图像进行滤波
     * 对一幅图像进行运动模糊并加高斯噪声，然后对图像进行逆滤波、维纳滤波进行图像复原
     * 初步接触QT框架，利用C++ & OpenCV & QTcreator实现了一个频域滤波GUI小软件（可打包单独运行）  
-    ![软件截图](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%205/%E6%88%AA%E5%9B%BE.bmp)
+    ![软件截图](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%205/screen.bmp)
   * Problems
     * 限波滤波器对图像进行滤波只能以人机交互的方式，没有普适性，是个遗憾
 * Experiment6
@@ -77,3 +77,12 @@ It's some Matlab codes for Digital Image Processing.
       1. Otus方法
       2. 拉普拉斯为基础的边缘信息改进  冈萨雷斯数字图像处理p485
 * FP（指纹识别）
+  * Mainly functions
+    * 基于灰度共生矩阵的纹理相似度指纹识别
+    * 生成指纹库
+    * 计算指纹图像的灰度共生矩阵及特征值
+    * 读入指纹图像并与指纹库中的数据进行比对（通过计算共生矩阵特征值的欧氏距离的方式）
+  * Problems
+    * 对纹理特征分析的理解不够深入，实际效果并不是很好，有很大的改进空间。
+* Study_the_code
+  * 几个值得去仔细研究学习的Matlab函数
