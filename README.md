@@ -59,7 +59,7 @@ It's some Matlab codes for Digital Image Processing.
     * 实现陷波（带阻、带通）滤波器对图像进行滤波
     * 对一幅图像进行运动模糊并加高斯噪声，然后对图像进行逆滤波、维纳滤波进行图像复原
     * 初步接触QT框架，利用C++ & OpenCV & QTcreator实现了一个频域滤波GUI小软件（可打包单独运行）  
-    [软件截图]()
+    ![软件截图](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%205/%E6%88%AA%E5%9B%BE.bmp)
   * Problems
     * 限波滤波器对图像进行滤波只能以人机交互的方式，没有普适性，是个遗憾
 * Experiment6
@@ -68,7 +68,7 @@ It's some Matlab codes for Digital Image Processing.
     * 实现将`HSI`图像转为`RGB`三分量的程序
     * 实现彩色图像直方图均衡
     * 编写用户交互的自定义伪彩色处理小软件  
-    [软件截图]()
+    ![软件截图](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%206/%E6%88%AA%E5%9B%BE.bmp)
 * Experiment7
   * Mainly functions
     * 实现图像基本形态学处理（腐蚀、膨胀、开运算、闭运算）
