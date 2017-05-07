@@ -28,7 +28,7 @@ It's some Matlab codes for Digital Image Processing.
     * 实现laplacian算子对图像的增强、Sobel算子对图像边缘提取
     * 使用均方误差和交叉熵对图像去噪效果进行了量化评价（客观评价）  
     ![公式](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%203/%E5%85%AC%E5%BC%8F.bmp)
-    * 初步接触OpenCV库，用OpenCV库实现
+    * 初步接触[`OpenCV`](http://opencv.org/)库，用OpenCV库实现
       1. 高斯噪声处理
       2. 椒盐噪声处理
       3. Laplacian图像增强
@@ -47,7 +47,7 @@ It's some Matlab codes for Digital Image Processing.
       [参考书：快速傅里叶变换：算法与应用](http://baike.baidu.com/link?url=eOVkAB4fxqUbWyOtwALgyRGu1dxbt5YvCST0RTyzN616fo_64R2GKRHo05Ng9wcMF_JuEemPqGDT2v6HgbNal9Ee-7vgPeL2E-QePH5ujk5RaWLoFxnQR7MbBBzPhbiy1EvxcLtu2vFPPsD_dT_DPL7yxrR08Ns8Rnno-rRY7jPOTWwME5_iIq0o40WoBg9ROhx5qxXVhYG0KjkGIxHIeLHdOMQJlyRa6_CZJ5m-8YS)
       4. 对算法进行了运行时间测试并与Matlab自带fft进行了比较
     * 利用`FFT2()`实现二维高斯光束的菲涅尔衍射和夫琅禾费衍射
-    * 使用C++ & OpenCV实现了基本的快速傅里叶变换类`class myDFT()`
+    * 使用C++ & OpenCV实现了基本的快速傅里叶变换类[`class myDFT()`](https://github.com/Littlehhh/Digital-Image-Processing/blob/master/Experiment%204/Dfttest.cpp)
   * Problems
     * Matlab申请内存空间的函数实在是太慢了，严重拖慢FFT的运行速度，而它的矩阵运算是真的快，这种时候C/C++的优势就体现出来了
   * Extra  
@@ -58,7 +58,7 @@ It's some Matlab codes for Digital Image Processing.
     * 编程实现了图像的理想低通、高斯低通 、布特沃斯低通滤波及相应的高通滤波
     * 实现陷波（带阻、带通）滤波器对图像进行滤波
     * 对一幅图像进行运动模糊并加高斯噪声，然后对图像进行逆滤波、维纳滤波进行图像复原
-    * 初步接触QT框架，利用C++ & OpenCV & QTcreator实现了一个频域滤波GUI小软件（可打包单独运行）  
+    * 初步接触[`QT框架`](https://www.qt.io/)，利用C++ & OpenCV & QTcreator实现了一个频域滤波GUI小软件（可打包单独运行）  
     ![软件截图](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%205/screen.bmp)
   * Problems
     * 限波滤波器对图像进行滤波只能以人机交互的方式，没有普适性，是个遗憾
