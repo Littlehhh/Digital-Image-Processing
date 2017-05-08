@@ -7,21 +7,21 @@ It's some Matlab codes for Digital Image Processing.
 ****
 
 ## Contents & Mainly functions of these codes
-* Experiment1
+* Experiment 1
   * Mainly functions
     * 数字图像的基本读写、显示与保存；五类图形显示方法
     * 读取图像并显示灰度图像、索引图像、RGB图像、二进制图像、多帧图像；进行图像类型转化
     * 编程实现最近邻法、双线性内插法（及它的改进方法）、双三次内插法的图像放大(全部考虑到RGB图而不光是适用于灰度图)
   * Problems
     * 双三次内插法的核函数是否有更好的形式?
-* Experiment2
+* Experiment 2
   * Mainly functions
     * 图像的直方图均衡
     * 图像的直方图规定化（匹配）
     * 局部直方图均衡
   * Problems
     * 如何客观评价直方图均衡及规定化的好坏？
-* Experiment3
+* Experiment 3
   * Mainly functions
     * 对图像添加椒盐噪声以及高斯噪声
     * 实现对图像的均值滤波、高斯滤波、中值滤波
@@ -35,7 +35,7 @@ It's some Matlab codes for Digital Image Processing.
       4. Sobel边缘提取
   * Problems
     * 个人感觉OpenCV的`WaitKey()`函数存在一些问题，也许是不懂吧
-* Experiment4
+* Experiment 4
   * Mainly functions
     * 充分利用matlab快速矩阵相乘实现`离散傅里叶变换`
     * 实现三种`快速傅里叶变换`（FFT）以及相应的逆变换包括一维变换及二维变换
@@ -53,7 +53,7 @@ It's some Matlab codes for Digital Image Processing.
   * Extra  
   ![fftw-logo](http://www.fftw.org/fftw-logo-med.gif)
     * [一个著名的开源FFT库:fftw](http://www.fftw.org/) （Matlab的fft的底层库）
-* Experiment5
+* Experiment 5
   * Mainly functions
     * 编程实现了图像的理想低通、高斯低通 、布特沃斯低通滤波及相应的高通滤波
     * 实现陷波（带阻、带通）滤波器对图像进行滤波
@@ -62,14 +62,14 @@ It's some Matlab codes for Digital Image Processing.
     ![软件截图](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%205/screen.bmp)
   * Problems
     * 限波滤波器对图像进行滤波只能以人机交互的方式，没有普适性，是个遗憾
-* Experiment6
+* Experiment 6
   * Mainly functions
     * 实现将`RGB`图像转为`HSI`三分量的程序
     * 实现将`HSI`图像转为`RGB`三分量的程序
     * 实现彩色图像直方图均衡
     * 编写用户交互的自定义伪彩色处理小软件  
     ![软件截图](https://github.com/Littlehhh/Digital-Image-Processing/raw/master/Experiment%206/%E6%88%AA%E5%9B%BE.bmp)
-* Experiment7
+* Experiment 7
   * Mainly functions
     * 实现图像基本形态学处理（腐蚀、膨胀、开运算、闭运算）
     * 实现提取给定图像不同形状的结构元素特征（使用形态学开运算和闭运算）
