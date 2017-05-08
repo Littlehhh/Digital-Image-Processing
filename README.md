@@ -4,6 +4,7 @@ It's some Matlab codes for Digital Image Processing.
 
 ****
 ### Author: Hui Wang
+### E-mail: 1061659563@qq.com or wanghuichn@yahoo.com
 ****
 
 ## Contents & Mainly functions of these codes
